@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="1.7" group="system" method="upgrade">
+	<name>System - Joomill</name>
+	<creationDate>06-07-2022</creationDate>
+	<author>Joomill</author>
+	<authorEmail>info@joomill.nl</authorEmail>
+	<authorUrl>https://www.joomill.nl</authorUrl>
+    <copyright>Copyright (C) 2022 Joomill. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later;</license>
+    <version>1.0.0</version>
+    <scriptfile>script.php</scriptfile>
+	<files>
+		<filename plugin="joomill">joomill.php</filename>
+	</files>
+	<config>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Joomill login and admin styling">https://raw.githubusercontent.com/Joomill/Joomill_Styling/master/manifest.xml</server>
+	</updateservers>
+</extension>
