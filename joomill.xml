@@ -7,7 +7,7 @@
 	<authorUrl>https://www.joomill.nl</authorUrl>
     <copyright>Copyright (C) 2022 Joomill. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later;</license>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <scriptfile>script.php</scriptfile>
 	<files>
 		<filename plugin="joomill">joomill.php</filename>

@@ -1,4 +1,11 @@
 <?php
+/*
+ *  package: Joomill-Styling
+ *  copyright: Copyright (c) 2022. Jeroen Moolenschot | Joomill
+ *  license: GNU General Public License version 3 or later
+ *  link: https://www.joomill.nl
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die(); 
 
