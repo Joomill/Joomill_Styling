@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" version="1.7" group="system" method="upgrade">
 	<name>System - Joomill</name>
-	<creationDate>06-07-2022</creationDate>
-	<author>Joomill</author>
+	<creationDate>Mei 2023</creationDate>
+	<author>Jeroen Moolenschot | Joomill</author>
 	<authorEmail>info@joomill.nl</authorEmail>
 	<authorUrl>https://www.joomill.nl</authorUrl>
     <copyright>Copyright (C) 2022 Joomill. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later;</license>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <scriptfile>script.php</scriptfile>
 	<files>
 		<filename plugin="joomill">joomill.php</filename>
 	</files>
 	<config>
+		<fields name="params" addfieldpath="/plugins/system">
+			<fieldset name="basic">
+				<field name="themecolor" type="color" default="#ffffff" label="Theme Color"
+					   description="Select your Theme-Color for metadata"/>
+				<field name="homepagetitle" type="text" default="" label="Home Pagetitle"
+					   description="Set the Pagetitle for the Homepage, when empty only the sitename is used."/>
+			</fieldset>
+		</fields>
 	</config>
 	<updateservers>
 		<server type="extension" priority="1" name="Joomill login and admin styling">https://raw.githubusercontent.com/Joomill/Joomill_Styling/master/manifest.xml</server>
