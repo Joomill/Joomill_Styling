@@ -13,8 +13,9 @@
         <tags>
             <tag>stable</tag>
         </tags>
-        <maintainer>Joomill</maintainer>
+        <maintainer>Jeroen Moolenschot | Joomill</maintainer>
         <maintainerurl>https://www.joomill.nl</maintainerurl>
         <targetplatform name="joomla" version="4"/>
+        <section>Updates</section>
     </update>
 </updates>
