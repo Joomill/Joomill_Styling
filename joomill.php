@@ -89,7 +89,7 @@ class plgSystemJoomill extends CMSPlugin
         $siteName = Factory::getConfig()->get('sitename');
 
         if ($menu->getActive() == $menu->getDefault($language->getTag())) {
-            if ($this->params->get('Them')){
+            if ($this->params->get('homepagetitle')){
                 $doc->setTitle($this->params->get('homepagetitle'));
             } else {
                 $doc->setTitle($siteName);
