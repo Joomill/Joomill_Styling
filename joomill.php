@@ -96,8 +96,8 @@ class plgSystemJoomill extends CMSPlugin
             }
         }
 
-        // Set CANONICAL URL
-        $link = \Joomla\CMS\Uri\Uri::getInstance()->toString(); 
+        // SET CANONICAL URL
+        $link = Uri::getInstance()->toString();
         $link = rtrim($link, '/');
         $link = strtok($link, '?');
         $doc->addHeadLink($link, 'canonical');
