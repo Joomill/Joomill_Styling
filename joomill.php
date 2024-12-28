@@ -45,8 +45,49 @@ class plgSystemJoomill extends CMSPlugin
         }
 
         $wa = $this->app->getDocument()->getWebAssetManager();
-        $wa->registerAndUseStyle('style', 'https://www.joomill.nl/customers/style.css');
-    }
+		$wa->registerAndUseStyle('style', 'https://www.joomill.nl/customers/style.css');
+
+        $currentURL = Uri::getInstance();
+        $currentDomain = $currentURL->toString(array('scheme', 'host'));
+		if (strpos($currentDomain, "joomill.dev") !== false) {
+			$wa->addInlineStyle('
+			.header, 
+			.header .logo {
+				background: #ff9900 !important;
+			}
+			
+			.header .page-title {
+				color: #
+				fde6b9;
+				font-weight: 400;
+			}
+			
+			.header .page-title:after {
+				content: " - DEV";
+			}
+			
+			.header-item-content button {
+    			color: #ff9900;
+    		}
+    		
+    		.header a,
+    		.header-item-content {
+				background-color: #fde6b9;
+				color: #ff9900;
+			}
+			
+			.header-item-icon>* {
+				background-color: #ff9900;
+			}
+			
+			.header-item-content.joomlaversion {
+				color: #fde6b9;
+			}
+			
+}
+');
+        }
+	}
 
 
     function onAfterRender() {
