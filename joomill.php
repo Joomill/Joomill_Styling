@@ -57,13 +57,23 @@ class plgSystemJoomill extends CMSPlugin
 			}
 			
 			.header .page-title {
-				color: #
+				color: #ffffff;
 				fde6b9;
 				font-weight: 400;
 			}
 			
-			.header .page-title:after {
-				content: " - DEV";
+			.header .logo:after {
+				content: ".DEV";
+				background: red;
+				color: #ffffff;
+				font-size: 10px;
+				padding: 2px 5px;
+				border-radius: 5px;
+			}
+			
+			.header .logo.small:after {
+				content: "" !important;
+				padding: 0px !important;
 			}
 			
 			.header-item-content button {
@@ -76,6 +86,15 @@ class plgSystemJoomill extends CMSPlugin
 				color: #ff9900;
 			}
 			
+			.header a:hover,
+    		.header-item-content:not(.no-link):not(.joomlaversion):hover {
+    			background-color: #fde6b9;
+				color: #000;
+			}
+			.header-item-content button:hover {
+				color: #000;
+			}	
+			
 			.header-item-icon>* {
 				background-color: #ff9900;
 			}
@@ -83,9 +102,7 @@ class plgSystemJoomill extends CMSPlugin
 			.header-item-content.joomlaversion {
 				color: #fde6b9;
 			}
-			
-}
-');
+			');
         }
 	}
 
@@ -99,11 +116,15 @@ class plgSystemJoomill extends CMSPlugin
 
         $body = Factory::getApplication()->getBody();
         $find[] = Uri::getInstance()->root().'media/templates/administrator/atum/images/logos/login.svg';
+		$find[] = Uri::getInstance()->root().'media/templates/administrator/atum/images/logos/brand-large.svg';
+		$find[] = Uri::getInstance()->root().'media/templates/administrator/atum/images/logos/brand-small.svg';
         $find[] = 'href="index.php?option=com_cpanel&view=cpanel&dashboard=help"';
         $find[] = '<a href="https://docs.joomla.org/Special:MyLanguage/How_do_you_recover_or_reset_your_admin_password%3F" target="_blank" rel="noopener nofollow" title="Open Inloggegevens vergeten? in een nieuw venster">Inloggegevens vergeten?</a>';
         $find[] = '<a href="https://docs.joomla.org/Special:MyLanguage/How_do_you_recover_or_reset_your_admin_password%3F" target="_blank" rel="noopener nofollow" title="Open Forgot your login details? in new window">Forgot your login details?</a>';
 
-        $replace[] = 'https://www.joomill.nl/customers/login-logo.png';
+        $replace[] = 'https://www.joomill.nl/customers/logo.svg';
+		$replace[] = 'https://www.joomill.nl/customers/logo-wit.svg';
+		$replace[] = 'https://www.joomill.nl/customers/blokjes-wit.svg';
         $replace[] = 'href="https://www.joomill.nl/contactgegevens" target="_blank"';
         $replace[] = '<a href="https://www.joomill.nl/contactgegevens" target="_blank" rel="noopener nofollow" title="Heb je een vraag?">Hulp nodig?</a>';
         $replace[] = '<a href="https://www.joomill.nl/contactgegevens" target="_blank" rel="noopener nofollow" title="Heb je een vraag?">Need help?</a>';
