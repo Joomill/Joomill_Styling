@@ -15,7 +15,7 @@
         </tags>
         <maintainer>Jeroen Moolenschot | Joomill</maintainer>
         <maintainerurl>https://www.joomill.nl</maintainerurl>
-        <targetplatform name="joomla" version="4"/>
+        <targetplatform name="joomla" version="4|5"/>
         <section>Updates</section>
     </update>
 </updates>
