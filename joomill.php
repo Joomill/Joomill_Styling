@@ -151,8 +151,8 @@ class plgSystemJoomill extends CMSPlugin
 
 		// SET HOMEPAGE PAGETITLE
 		$menu     = Factory::getApplication()->getMenu();
-		$language = Factory::getLanguage();
-		$siteName = Factory::getConfig()->get('sitename');
+		$language = Factory::getApplication()->getLanguage();
+		$siteName = Factory::getApplication()->get('sitename');
 
 		if ($menu->getActive() == $menu->getDefault($language->getTag()))
 		{
