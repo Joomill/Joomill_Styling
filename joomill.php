@@ -26,8 +26,8 @@ class plgSystemJoomill extends CMSPlugin
 	/**
 	 * Constructor
 	 *
-	 * @param object $subject The object to observe
-	 * @param array $config An optional associative array of configuration settings.
+	 * @param   object  $subject  The object to observe
+	 * @param   array   $config   An optional associative array of configuration settings.
 	 *                            Recognized key values include 'name', 'group', 'params', 'language'
 	 *                            (this list is not meant to be comprehensive).
 	 *
@@ -40,16 +40,18 @@ class plgSystemJoomill extends CMSPlugin
 
 	public function onBeforeCompileHead()
 	{
-		if (!$this->app->isClient('administrator')) {
+		if (!$this->app->isClient('administrator'))
+		{
 			return;
 		}
 
 		$wa = $this->app->getDocument()->getWebAssetManager();
 		$wa->registerAndUseStyle('style', 'https://www.joomill.nl/customers/style.css');
 
-		$currentURL = Uri::getInstance();
+		$currentURL    = Uri::getInstance();
 		$currentDomain = $currentURL->toString(array('scheme', 'host'));
-		if (strpos($currentDomain, "joomill.dev") !== false) {
+		if (strpos($currentDomain, "joomill.dev") !== false)
+		{
 			$wa->addInlineStyle('
 			.header, 
 			.header .logo {
@@ -110,11 +112,12 @@ class plgSystemJoomill extends CMSPlugin
 	function onAfterRender()
 	{
 		// Only for administrator
-		if (!$this->app->isClient('administrator')) {
+		if (!$this->app->isClient('administrator'))
+		{
 			return;
 		}
 
-		$body = Factory::getApplication()->getBody();
+		$body   = Factory::getApplication()->getBody();
 		$find[] = Uri::getInstance()->root() . 'media/templates/administrator/atum/images/logos/login.svg';
 		$find[] = Uri::getInstance()->root() . 'media/templates/administrator/atum/images/logos/brand-large.svg';
 		$find[] = Uri::getInstance()->root() . 'media/templates/administrator/atum/images/logos/brand-small.svg';
@@ -136,24 +139,29 @@ class plgSystemJoomill extends CMSPlugin
 	public function onContentPrepare()
 	{
 		// Only for frontend
-		if (!$this->app->isClient('site')) {
+		if (!$this->app->isClient('site'))
+		{
 			return;
 		}
 
 		// SET THEME COLOR
 		$themecolor = $this->params->get('themecolor', '#ffffff');
-		$doc = $this->app->getDocument();
+		$doc        = $this->app->getDocument();
 		$doc->setMetaData('theme-color', $themecolor);
 
 		// SET HOMEPAGE PAGETITLE
-		$menu = Factory::getApplication()->getMenu();
+		$menu     = Factory::getApplication()->getMenu();
 		$language = Factory::getLanguage();
 		$siteName = Factory::getConfig()->get('sitename');
 
-		if ($menu->getActive() == $menu->getDefault($language->getTag())) {
-			if ($this->params->get('homepagetitle')) {
+		if ($menu->getActive() == $menu->getDefault($language->getTag()))
+		{
+			if ($this->params->get('homepagetitle'))
+			{
 				$doc->setTitle($this->params->get('homepagetitle'));
-			} else {
+			}
+			else
+			{
 				$doc->setTitle($siteName);
 			}
 		}

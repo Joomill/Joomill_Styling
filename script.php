@@ -24,8 +24,9 @@ class plgSystemJoomillInstallerScript
 
 	private function enablePlugin()
 	{
-		try {
-			$db = Factory::getDbo();
+		try
+		{
+			$db    = Factory::getDbo();
 			$query = $db->getQuery(true)
 				->update($db->qn('#__extensions'))
 				->set($db->qn('enabled') . ' = ' . $db->q(1))
@@ -34,7 +35,9 @@ class plgSystemJoomillInstallerScript
 				->where('element = ' . $db->q('joomill'));
 			$db->setQuery($query);
 			$db->execute();
-		} catch (\Exception $e) {
+		}
+		catch (\Exception $e)
+		{
 			return;
 		}
 	}
