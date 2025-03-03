@@ -1,7 +1,7 @@
 <?php
-/**
+/*
  *  package: Joomill-Styling
- *  copyright: Copyright (c) 2023. Jeroen Moolenschot | Joomill
+ *  copyright: Copyright (c) 2025. Jeroen Moolenschot | Joomill
  *  license: GNU General Public License version 3 or later
  *  link: https://www.joomill.nl
  */
