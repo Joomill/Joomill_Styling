@@ -6,7 +6,7 @@
  *  link: https://www.joomill.nl
  */
 
-// No direct access to this file
+// No direct access
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
