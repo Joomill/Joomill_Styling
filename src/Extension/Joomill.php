@@ -17,24 +17,8 @@ use Joomla\CMS\Uri\Uri;
 
 class Joomill extends CMSPlugin
 {
-	/**
-	 * Application object.
-	 *
-	 * @var    JApplicationCms
-	 * @since  1.0.0
-	 */
 	protected $app;
 
-	/**
-	 * Constructor
-	 *
-	 * @param   object  $subject  The object to observe
-	 * @param   array   $config   An optional associative array of configuration settings.
-	 *                            Recognized key values include 'name', 'group', 'params', 'language'
-	 *                            (this list is not meant to be comprehensive).
-	 *
-	 * @since   1.0.0
-	 */
 	public function __construct(&$subject, array $config = array())
 	{
 		parent::__construct($subject, $config);
@@ -57,7 +41,6 @@ class Joomill extends CMSPlugin
 			$wa->registerAndUseStyle('devstyle', 'https://www.joomill.nl/customers/style-dev.css');
 		}
 	}
-
 
 	function onAfterRender()
 	{
