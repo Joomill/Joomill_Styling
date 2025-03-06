@@ -104,23 +104,22 @@ class Joomill extends CMSPlugin
 
 		// SET THEME COLOR
 		$themecolor = $this->params->get('themecolor', '#ffffff');
-		$doc        = $this->app->getDocument();
-		$doc->setMetaData('theme-color', $themecolor);
+		$this->app->getDocument()->setMetaData('theme-color', $themecolor);
 
 		// SET HOMEPAGE PAGETITLE
-		$menu     = Factory::getApplication()->getMenu();
-		$language = Factory::getApplication()->getLanguage();
-		$siteName = Factory::getApplication()->get('sitename');
+		$menu     = $this->app->getMenu();
+		$language = $this->app->getLanguage();
+		$siteName = $this->app->get('sitename');
 
 		if ($menu->getActive() == $menu->getDefault($language->getTag()))
 		{
 			if ($this->params->get('homepagetitle'))
 			{
-				$doc->setTitle($this->params->get('homepagetitle'));
+				$this->app->getDocument()->setTitle($this->params->get('homepagetitle'));
 			}
 			else
 			{
-				$doc->setTitle($siteName);
+				$this->app->getDocument()->setTitle($siteName);
 			}
 		}
 
@@ -128,6 +127,6 @@ class Joomill extends CMSPlugin
 		$link = Uri::getInstance()->toString();
 		$link = rtrim($link, '/');
 		$link = strtok($link, '?');
-		$doc->addHeadLink($link, 'canonical');
+		$this->app->getDocument()->addHeadLink($link, 'canonical');
 	}
 }
