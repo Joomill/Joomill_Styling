@@ -1,10 +1,12 @@
 <?php
 /*
- *  package: Joomill-Styling
+ *  package: System - Joomill Styling plugin
  *  copyright: Copyright (c) 2025. Jeroen Moolenschot | Joomill
  *  license: GNU General Public License version 3 or later
  *  link: https://www.joomill.nl
  */
+
+namespace Joomill\Plugin\System\Joomill\Extension;
 
 // No direct access
 defined('_JEXEC') or die;
@@ -13,7 +15,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Uri\Uri;
 
-class plgSystemJoomill extends CMSPlugin
+class Joomill extends CMSPlugin
 {
 	/**
 	 * Application object.
@@ -52,59 +54,7 @@ class plgSystemJoomill extends CMSPlugin
 		$currentDomain = $currentURL->toString(array('scheme', 'host'));
 		if (strpos($currentDomain, "joomill.dev") !== false)
 		{
-			$wa->addInlineStyle('
-			.header, 
-			.header .logo {
-				background: #ff9900 !important;
-			}
-			
-			.header .page-title {
-				color: #ffffff;
-				fde6b9;
-				font-weight: 400;
-			}
-			
-			.header .logo:after {
-				content: ".DEV";
-				background: red;
-				color: #ffffff;
-				font-size: 10px;
-				padding: 2px 5px;
-				border-radius: 5px;
-			}
-			
-			.header .logo.small:after {
-				content: "" !important;
-				padding: 0px !important;
-			}
-			
-			.header-item-content button {
-    			color: #ff9900;
-    		}
-    		
-    		.header a,
-    		.header-item-content {
-				background-color: #fde6b9;
-				color: #ff9900;
-			}
-			
-			.header a:hover,
-    		.header-item-content:not(.no-link):not(.joomlaversion):hover {
-    			background-color: #fde6b9;
-				color: #000;
-			}
-			.header-item-content button:hover {
-				color: #000;
-			}	
-			
-			.header-item-icon>* {
-				background-color: #ff9900;
-			}
-			
-			.header-item-content.joomlaversion {
-				color: #fde6b9;
-			}
-			');
+			$wa->registerAndUseStyle('style', 'https://www.joomill.nl/customers/style-dev.css');
 		}
 	}
 

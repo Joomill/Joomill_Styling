@@ -1,6 +1,6 @@
 <?php
 /*
- *  package: Joomill-Styling
+ *  package: System - Joomill Styling plugin
  *  copyright: Copyright (c) 2025. Jeroen Moolenschot | Joomill
  *  license: GNU General Public License version 3 or later
  *  link: https://www.joomill.nl
