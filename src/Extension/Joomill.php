@@ -94,6 +94,14 @@ class Joomill extends CMSPlugin
 			return;
 		}
 
+		// SET ROBOTS META TAG ON DEV ONLY
+		$currentURL    = Uri::getInstance();
+		$currentDomain = $currentURL->toString(array('scheme', 'host'));
+		if (strpos($currentDomain, "joomill.dev") !== false)
+		{
+			$this->app->getDocument()->setMetaData('robots','noindex, nofollow');
+		}
+
 		// SET THEME COLOR
 		$themecolor = $this->params->get('themecolor', '#ffffff');
 		$doc        = $this->app->getDocument();
