@@ -6,7 +6,6 @@
  *  link: https://www.joomill.nl
  */
 
-
 // No direct access.
 \defined('_JEXEC') or die;
 
