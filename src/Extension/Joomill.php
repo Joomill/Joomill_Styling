@@ -54,7 +54,7 @@ class Joomill extends CMSPlugin
 		$currentDomain = $currentURL->toString(array('scheme', 'host'));
 		if (strpos($currentDomain, "joomill.dev") !== false)
 		{
-			$wa->registerAndUseStyle('style', 'https://www.joomill.nl/customers/style-dev.css');
+			$wa->registerAndUseStyle('devstyle', 'https://www.joomill.nl/customers/style-dev.css');
 		}
 	}
 
